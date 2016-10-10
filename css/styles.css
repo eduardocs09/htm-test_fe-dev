@@ -1,0 +1,149 @@
+body {
+	background-image: url("..\\img\\background.jpg");
+	background-size: 100%;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.btn-primary{
+	background-image: linear-gradient(to bottom,rgba(240, 0, 54, 1) 0,rgba(200, 0, 40, 1) 100%);
+	border-color: rgba(140, 0, 40, 1);
+	background-color: rgba(200, 0, 40, 1);
+}
+
+.btn-primary:hover{
+	background-color: rgba(200, 0, 40, 1);
+	border-color: rgba(140, 0, 40, 1);
+}
+
+.btn-primary:focus, .btn-primary:visited{
+	background-image: linear-gradient(to bottom,rgba(240, 0, 54, 1) 0,rgba(200, 0, 40, 1) 100%);
+	border-color: rgba(140, 0, 40, 1);
+	background-color: rgba(200, 0, 40, 1);
+	outline-color: rgba(140, 0, 40, 1);
+	background-position: 0;
+}
+
+.btn-primary:active, .btn-primary:active:hover, .btn-primary:active:visited, .btn-primary:active:focus,
+.btn-primary:hover:visited, .btn-primary:hover:focus, .btn-primary:visited:focus,
+.btn-primary:active:hover:visited, .btn-primary:active:hover:focus, .btn-primary:active:visited:focus,
+.btn-primary:hover:visited:focus, .btn-primary:active:hover:visited:focus {
+	background-color: rgba(140, 0, 40, 1);
+	border-color: rgba(140, 0, 40, 1);
+	outline-color: rgba(140, 0, 40, 1);
+	background-position: 0;
+}
+
+h1, h2, h3, h4, h5, h6{
+	color: rgba(200, 0, 40, 1);
+}
+
+.form-control:focus{
+	border-color: rgba(255, 128, 128, 1);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(255, 128, 128, 0.4);
+}
+
+.navbar-brand {
+  padding: 0px;
+}
+
+.navbar-brand{
+  background: url('..\\img\\hotmart-logo.png') center / contain no-repeat;
+  width: 200px;
+}
+
+.navbar-hotmart{
+	background-image: linear-gradient(to bottom,rgba(240, 0, 54, 1) 0,rgba(200, 0, 40, 1) 100%);
+	color: #ffffff !important;
+}
+
+div.form{
+	background-color: #ffffff;
+	border-radius: 10px;
+	text-align: center;
+	padding: 20px 50px 20px 50px;
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(255, 128, 128, 0.4);
+}
+
+div.table-row{
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	vertical-align: middle;
+}
+
+div.table-text-colum{
+	text-align: left;
+}
+
+div.address-label{
+	font-size: 1.75em;
+}
+
+div.address-detail{
+	font-size: 0.75em;
+	font-style: italic;
+}
+
+span.glyphicon-edit{
+	color: green;
+}
+
+span.glyphicon-remove{
+	color: red;
+}
+
+h1.page-title{
+	text-align: left;
+}
+
+#divAddresses, #divContent{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+#btnSave{
+	margin-left: 20px;
+}
+
+#btnCancel{
+	margin-right: 20px;
+}
+
+#btnCancel:focus{
+	outline-color: rgba(140, 0, 40, 1);
+}
+
+#divAvailableItems{
+	font-size: 0.8em;
+}
+
+.edit-row:nth-of-type(1){
+	margin-top: 34px;
+}
+
+.list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover{
+	background-image: linear-gradient(to bottom,rgba(240, 0, 54, 1) 0,rgba(200, 0, 40, 1) 100%);
+	text-shadow: 0 -1px 0 rgba(140, 0, 40, 1);
+	border-color: rgba(140, 0, 40, 1);
+}
+
+.edit-row{
+	margin-bottom: 5px;
+	vertical-align: middle;
+}
+
+.edit-label-column{
+	text-align: right;
+}
+
+@media (max-width: 978px) {
+  div.wrapper {
+    padding:10px 20px 0px 20px;
+  }
+}
+
+@media (min-width: 979px) {
+  div.wrapper {
+    padding: 40px 150px 0px 150px;
+  }
+}

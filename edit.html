@@ -6,24 +6,99 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet">
+	<link rel="stylesheet" href="css/styles.css" media="screen">
 	<script type="text/javascript" src="js/sec.js"></script>
 	<script type="text/javascript" src="js/util.js"></script>
 	<script type="text/javascript" src="js/edit.js"></script>
 	<title>Zika | Dengue | Chikungunya</title>
 </head>
+
 <body>
-	<h1 id="lblTitle"></h1>
-	Nome do Local:<input type="text" id="txtName"><br>
-	CEP: <input type="text" id="txtCep"><br>
-	Endereço: <input type="text" id="txtAdress"><br>
-	Número: <input type="text" id="txtNumber"><br>
-	Complemento: <input type="text" id="txtComplement"><br>
-	Bairro: <input type="text" id="txtNeighborhood"><br>
-	Cidade: <input type="text" id="txtCity"><br>
-	Estado: <input type="text" id="txtState"><br>
-	<div id="divAvailableItems">
-	</div><br>
-	<button type="button" id="btnSave">Salvar</button>
-	<button type="button" id="btnCancel">Cancelar</button>
+	<header>
+		<nav class="navbar navbar-hotmart navbar-static-top">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand text-hide" href="https://www.hotmart.com/pt/" target="_blank"></a>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<div class="wrapper container-fluid">
+		<div class="form">
+			<div class="row">
+				<h1 id="lblTitle"></h1>
+			</div>
+			<div class="row" id="divContent">
+				<div class="col-xs-12 col-sm-6 col-md-6">
+					<div class="row edit-row">
+						<div class="col-xs-4 col-sm-4 col-md-4 edit-label-column">Nome do Local:</div>
+						<div class="col-xs-8 col-sm-8 col-md-8">
+							<input type="text" id="txtName" class="form-control">
+						</div>
+					</div>
+					<div class="row edit-row">
+						<div class="col-xs-4 col-sm-4 col-md-4 edit-label-column">CEP:</div>
+						<div class="col-xs-8 col-sm-8 col-md-8">
+							<input type="text" id="txtCep" class="form-control">
+						</div>
+					</div>
+					<div class="row edit-row">
+						<div class="col-xs-4 col-sm-4 col-md-4 edit-label-column">Endereço:</div>
+						<div class="col-xs-8 col-sm-8 col-md-8">
+							<input type="text" id="txtAdress" class="form-control form-auto">
+						</div>
+					</div>
+					<div class="row edit-row">
+						<div class="col-xs-4 col-sm-4 col-md-4 edit-label-column">Número:</div>
+						<div class="col-xs-8 col-sm-8 col-md-8">
+							<input type="text" id="txtNumber" class="form-control">
+						</div>
+					</div>
+					<div class="row edit-row">
+						<div class="col-xs-4 col-sm-4 col-md-4 edit-label-column">Complemento:</div>
+						<div class="col-xs-8 col-sm-8 col-md-8">
+							<input type="text" id="txtComplement" class="form-control">
+						</div>
+					</div>
+					<div class="row edit-row">
+						<div class="col-xs-4 col-sm-4 col-md-4 edit-label-column">Bairro:</div>
+						<div class="col-xs-8 col-sm-8 col-md-8">
+							<input type="text" id="txtNeighborhood" class="form-control form-auto">
+						</div>
+					</div>
+					<div class="row edit-row">
+						<div class="col-xs-4 col-sm-4 col-md-4 edit-label-column">Cidade:</div>
+						<div class="col-xs-8 col-sm-8 col-md-8">
+							<input type="text" id="txtCity" class="form-control form-auto">
+						</div>
+					</div>
+					<div class="row edit-row">
+						<div class="col-xs-4 col-sm-4 col-md-4 edit-label-column">Estado:</div>
+						<div class="col-xs-8 col-sm-8 col-md-8">
+							<input type="text" id="txtState" class="form-control form-auto">
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-6">
+					<div class="row">
+						<h6>Selecione os itens disponíveis:</h6>
+					</div>
+					<div class="row">
+						<div id="divAvailableItems" class="list-group">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<button type="button" id="btnCancel" class="btn btn-lg">Cancelar</button>
+				<button type="button" id="btnSave" class="btn btn-lg btn-primary">Salvar</button>
+			</div>
+		</div>
+	</div>
 </body>
+
 </html>

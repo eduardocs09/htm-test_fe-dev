@@ -6,16 +6,34 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Zika | Dengue | Chikungunya</title>
-
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet">
+	<link rel="stylesheet" href="css/login.css" media="screen">
+	<link rel="stylesheet" href="css/styles.css" media="screen">
 	<script src="js/sec.js"></script>
 	<script src="js/login.js"></script>
 </head>
 
 <body>
-	Usuário: <input type="text" id="txtUser">
-	Senha: <input type="password" id="txtPassword">
-	<button type="button" id="btnLogin">Login</button>
+	<div class="wrapper">
+
+      <form class="form-signin">
+				<div class="login-heading">
+					<h1>ZIKA</h1>
+					<h2>DENGUE</h2>
+					<h4>CHIKUNGUNYA</h4>
+				</div>
+        <label for="txtUser" class="sr-only">Email usuário</label>
+        <input type="text" id="txtUser" class="form-control" placeholder="Email usuário" required autofocus>
+        <label for="txtPassword" class="sr-only">Senha</label>
+        <input type="password" id="txtPassword" class="form-control" placeholder="Senha" required>
+        <button id="btnLogin" class="btn btn-lg btn-primary btn-block" type="button">Log in</button>
+      </form>
+
+    </div> <!-- /wrapper -->
 </body>
 
 </html>

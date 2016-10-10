@@ -60,21 +60,52 @@ var List =  (function(){
 	var loadAddresses = function(data){
 		var divAddresses = $('#divAddresses');
 		$.each(data.data, function(index, value){
+
 			var divItem = $('<div/>')
 				.attr('id', value.id)
-				.text(value.label)
+				.attr('class', 'table-row row')
 				.appendTo(divAddresses);
+
+			var divTextColumn = $('<div/>')
+				.attr('class', 'col-xs-6 col-sm-8 col-md-8 table-text-colum')
+				.appendTo(divItem);
+
+			var divAddressLabel = $('<div/>')
+				.attr('class', 'col-xs-12 address-label')
+				.text(value.label)
+				.appendTo(divTextColumn);
+
+				var divAddressDetail = $('<div/>')
+					.attr('class', 'col-xs-12 address-detail')
+					.text(Util.getFullAddress(value))
+					.appendTo(divTextColumn);
+
+			var divEditColum = $('<div/>')
+				.attr('class', 'col-xs-3 col-sm-2 col-md-2 table-span-colum')
+				.appendTo(divItem);
+
 			var editItem = $('<a></a>')
 				.attr('href', '#')
-				.text(' Edit')
-				.appendTo(divItem);
+				//.text(' Edit')
+				.appendTo(divEditColum);
 			editItem.click(function(){
 				Redirect.editAddress(value.id);
 			})
+
+			var editSpan = $('<span></span>')
+			.attr('class', 'glyphicon glyphicon-edit')
+			.attr('data-toggle', 'tooltip')
+			.attr('title', 'Editar endereço')
+			.appendTo(editItem);
+
+			var divDeleteColum = $('<div/>')
+				.attr('class', 'col-xs-3 col-sm-2 col-md-2 table-span-colum')
+				.appendTo(divItem);
+
 			var deleteItem = $('<a></a>')
 				.attr('href', '#')
-				.text(' Delete')
-				.appendTo(divItem);
+				//.text(' Delete')
+				.appendTo(divDeleteColum);
 			deleteItem.click(function(){
 				if (confirm('Deseja realmente apagar o endereço?')){
 					Delete.deleteAddress(value.id).done(function(){
@@ -89,6 +120,13 @@ var List =  (function(){
 					});
 				}
 			});
+
+			var deleteSpan = $('<span></span>')
+			.attr('class', 'glyphicon glyphicon-remove')
+			.attr('data-toggle', 'tooltip')
+			.attr('title', 'Apagar endereço')
+			.appendTo(deleteItem);
+
 		});
 	};
 

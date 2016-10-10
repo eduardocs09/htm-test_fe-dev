@@ -8,14 +8,15 @@ var Security = (function(){
 
 	var login = function(user, password){
 		var def = new $.Deferred();
-		$.ajax({
+		var loginObj = {
 			url: config.host + '?grant_type=' + config.paramGrantType + '&username=' + user + '&password=' + password,
 			dataType: 'json',
 			headers: {
 				Authorization : config.initType + ' ' + config.initToken
 			},
 			method: 'POST'
-		}).done(function(data, textStatus, jqXHR){
+		};
+		$.ajax(loginObj).done(function(data, textStatus, jqXHR){
 			saveAuthInfo(data.token_type, data.access_token);
 			def.resolve();
 		}).fail(function(jqXHR, textStatus, errorThrown){

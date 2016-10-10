@@ -65,7 +65,13 @@ var Edit = (function(){
 				.attr('href', '#')
 				.text(value.name)
 				.appendTo(divItems);
-			var breakObj = $('<br/>').appendTo(anchorItem);
+			if (value.available){
+				anchorItem.attr('class', 'list-group-item active');
+			}
+			else{
+				anchorItem.attr('class', 'list-group-item');
+			}
+			//var breakObj = $('<br/>').appendTo(anchorItem);
 			anchorItem.click(function(){
 				if (anchorItem.hasClass('active')){
 					anchorItem.removeClass('active');
@@ -139,6 +145,12 @@ var Main = (function(Add, Edit, Security, Util){
 			}
 		});
 
+		$('input.form-auto').attr('disabled', true);
+
+		if (!config.addressId){
+				$('h6').hide();
+		}
+
 		$('#txtCep').blur(function(){
 			var cep = $('#txtCep').val();
 			getAddressByCep(cep).done(function(data){
@@ -208,6 +220,7 @@ var Main = (function(Add, Edit, Security, Util){
 			},
 			method: (config.addressId ? 'PUT' : 'POST')
 		}).done(function(data, textStatus, jqXHR){
+			alert('Endereço salvo com sucesso!');
 			def.resolve(data);
 		}).fail(function(jqXHR, textStatus, errorThrown){
 			//TODO: Handle errors
